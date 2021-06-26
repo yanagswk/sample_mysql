@@ -1,0 +1,12 @@
+# Dockerの起動設定
+
+version: '3'
+services: 
+    mysql:
+        build: ./mysql/   # Dockerfileからビルドすることを示す
+        volumes: 
+            # volumesでは、指定したディレクトリ配下のSQLファイルを
+            # コンテナ内のdocker-entrypoint-initdb.dに配置することで、起動時に実行してくれる。
+            - ./mysql/db:/docker-entrypoint-initdb.d   # 初期データ
+        environment: 
+            - MYSQL_ROOT_PASSWORD=root   # 環境変数 
