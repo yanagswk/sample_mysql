@@ -4,21 +4,11 @@
 
 
 ```bash  
-
 # Docker イメージのビルド
 docker-compose build
 
 # Docker コンテナの起動
 docker-compose up -d  
-
-# 作成したコンテナを確認
-docker ps  
-
-# コンテナに接続  
-docker exec -it "CONTAINER ID" bash  
-
-# mysqlに接続  
-mysql -u root -p  
 
 # Docker コンテナの停止
 docker-compose stop  
@@ -28,9 +18,18 @@ docker-compose down
 
 ```  
 
-# mysql接続後  
+# mysql接続方法
 
 ```bash  
+# コンテナIDを確認
+docker ps  
+
+# コンテナに接続  
+docker exec -it "CONTAINER ID" bash 
+
+# mysqlに接続  
+mysql -u root -p  
+
 # データベース名確認
 show databases;
 
