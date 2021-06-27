@@ -27,6 +27,9 @@ docker ps
 # コンテナに接続  
 docker exec -it "CONTAINER ID" bash 
 
+# mysqlに接続してデータベース接続
+mysql -u root -D "database名" -p
+
 # mysqlに接続  
 mysql -u root -p  
 
@@ -37,7 +40,7 @@ show databases;
 use "database名";
 
 # テーブル名確認  
-show "table名";  
+show tables;  
 
 ```  
 
